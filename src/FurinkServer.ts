@@ -36,7 +36,7 @@ export class FurinkServer {
 		this.logger.info("Loading protocols...");
 
 		const protocol = await loadProtocol(
-			join(this.options.protocolDirectory, "protocol.proto")
+			join(this.options.protocolDirectory, "database.proto")
 		);
 		const descriptor = loadPackageDefinition(protocol);
 	}
@@ -52,7 +52,7 @@ export class FurinkServer {
 	 * @param port The port to listen on.
 	 */
 	async start(host = this.options.host, port = this.options.port.toString()) {
-		this.logger.info("Starting server...");
+		this.logger.info(`Listening on ${host}:${port}`);
 		this.grpc.bindAsync(
 			`${host}:${port}`,
 			ServerCredentials.createInsecure(),

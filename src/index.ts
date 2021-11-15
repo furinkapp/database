@@ -14,5 +14,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const server = new FurinkServer({
 	protocolDirectory: resolve(process.cwd(), process.env.PROTOCOL_DIRECTORY!),
+	host: "0.0.0.0",
+	port: 9090,
 });
-server.loadProtocols();
+server.loadProtocols().then(() => server.start());
