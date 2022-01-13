@@ -1,13 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { createLogger, transports, format } from "winston";
 
-import { load as loadProtocol } from "@grpc/proto-loader";
-import { join } from "path";
-import {
-	loadPackageDefinition,
-	Server,
-	ServerCredentials,
-} from "@grpc/grpc-js";
+import { Server, ServerCredentials } from "@grpc/grpc-js";
 
 interface ServerOptions {
 	protocolDirectory: string;
@@ -34,11 +28,7 @@ export class FurinkServer {
 	 */
 	async loadProtocols() {
 		this.logger.info("Loading protocols...");
-
-		const protocol = await loadProtocol(
-			join(this.options.protocolDirectory, "database.proto")
-		);
-		const descriptor = loadPackageDefinition(protocol);
+		this.logger.warn("TODO: Load the protocols!");
 	}
 
 	/**
