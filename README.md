@@ -1,6 +1,6 @@
 # @furink/database
 
-Database backend powered by NodeJS and Prisma.
+Database backend powered by Rust and Prisma.
 
 ## Prerequisites
 
