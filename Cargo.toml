@@ -3,4 +3,11 @@ name = "database"
 version = "0.1.0"
 edition = "2021"
 
+# define workspace to include prisma cli
+[workspace]
+members = ["prisma-cli", "prisma-client"]
+
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+
+prisma = { path = "./prisma-client" }

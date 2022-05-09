@@ -1,0 +1,3 @@
+# alias for prisma-cli crate to enable versioned prisma client
+[alias]
+prisma = "run --package prisma-cli --"
